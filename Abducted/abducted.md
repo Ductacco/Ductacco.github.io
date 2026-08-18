@@ -31,7 +31,8 @@ Sau đó tôi đã dùng lệnh `enum4linux-ng -A <IP>` để sử dụng công 
 ![alt text](image-4.png)
 ![alt text](image-5.png)
 
-Từ tất cả tôi thấy được một nguời dùng được quét là Scott . Và 4 phân vùng nhưng chỉ có 2 phân vùng là IPC và HP-Reception cho phép chúng ta access được từ bên ngoài .Tôi đã vào OpenCVE và tìm các CVE liên quan đến 2 dịch vụ này và thấy CVE-2026-4480 
+Từ tất cả tôi thấy được một nguời dùng được quét là Scott . Và 4 phân vùng nhưng chỉ có 2 phân vùng là IPC và HP-Reception cho phép chúng ta access được từ bên ngoài .Tôi đã vào OpenCVE và tìm các CVE liên quan đến 2 dịch vụ này và thấy CVE-2026-4480
+
 ![alt text](image-7.png)
 
 đây là mô tả về CVE này 
@@ -47,7 +48,8 @@ Và đây là đoạn code khai thác hacker sẽ thiết lập kết nối ẩn
 
 sau khi vào trong kiểm tra qua id ta thấy đây chỉ là 1 guest account giờ chúng ta sẽ phải tìm file chứa password cho tài khoản người dùng thật ta đã thám thính được từ enum4linux `scott` ta sẽ ngó qua file passwd và tìm tất cả các file conf để tìm xem có passwd của ng dùng này không ![alt text](image-13.png)
 sau khi cat tất cả các file conf này tôi tìm được password trong file `/opt/offsite-backup/rclone.conf` 
-ở đây ta thấy passwd trong file rcloneconf  đã bị `obscured`
+ở đây ta thấy passwd trong file rcloneconf  đã bị `obscured` 
+
 ![alt text](image-26.png)
 ![alt text](image-14.png)
 
